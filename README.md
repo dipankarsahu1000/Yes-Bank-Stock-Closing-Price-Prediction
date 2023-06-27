@@ -40,8 +40,55 @@ The following charts were used here:
 6. Correlation Heatmap: To check the correlation among all the features.
 7. Pair Plot: To get an overall summary of the relationships between the variables.
 
-
 <h1> Feature Engineering & Data Pre-processing </h1>
 
-1. Handling Outliers: Log transfomration was used for outlier treatment.
-2. 
+- Handling Outliers: Log transfomration was used for outlier treatment.
+- Data Transformation: To deal with the skewness in the features, log transformation was used.
+- Data Splitting: The data was split into train and tests datasets with a split ratio of 80:20.
+- Data Scaling: The data was scaled using StandardScaler.
+
+
+<h1> ML Model Implementation </h1>
+
+The following models were fitted over the training data:
+
+1. Linear Regression.
+2. Ridge Regression (with GridSearchCV).
+3. Lasso Regression (with GridSearchCV).
+4. Elastic Net Regression (with GridSearchCV).
+
+After observing the evaluation metrics of all the implemented models, 'Ridge Regression with GridSearchCV' is chosen as the final prediction model.
+
+
+<h1> Hypothesis Testing </h1>
+
+The following tests were implemented:
+
+- 'Goldfeld-Quandt Test' is used to check whether the residuals are homoscedastic or not.
+- 'Ljungbox Test' is used to check for the autocorrelation among the residuals.
+- 'Shapiro-Wilk Test' is used to check if the residuals are normally distributed.
+
+
+
+<h1> Conclusion </h1>
+
+- Upon visualising the data, it can be clearly observed that after the year of 2018 (the year the fraud involving Rana Kapoor was exposed), the stock prices of Yes Bank went down sharply.
+
+- The dataset was very clean. It did not contain any missing values and duplicated rows and didn't require much further data wrangling.
+
+- There were some outliers in the features. A log transformation was implemented on all the features and de-emphasized the outliers.
+
+- A positive skewness was observed in all the features, but the log transformation took care of it.
+
+- A highly positive correlation was observed between the independent variables ('Open', 'High' and 'Low') and the dependent variable ('Close'). This is a good sign that the dependent variables can be predicted accurately from the indepedent variables.
+
+- The independent variables are also positively correlated to each other, which is a case of multicollinearity. As the dataset is a very small one, removal of features was not recommended. We expect the regularisation methods to take of the multicollinearity upto some extent.
+
+- Several regression models were implemented here and all of them were found to perform quite well and their evaluation metrics were very close to each other. But, among them, Ridge Regression with GridSearchCV was chosen as the final prediction model with an RMSE of 8.3824 and an R-2 score of 0.9938.
+
+- Among the features, the 'High' and 'Low' features were found to have positive weights which indicates positive influence on the predictions. But, the 'Open' was found to have a negative weight which means that the presence of this feature has an negative influence on the prediction.
+
+- The assumptions of the residuals being homoscedastic, not autocollinear and having a mean of zero are satisfied.
+
+
+
