@@ -7,6 +7,7 @@ Yes Bank is a well-known private bank in India which was officially founded in t
 
 The objective is to develop a predictive model that can forcast the closing price of Yes Bank's stock on a monthly basis, by analysing the historical stock price data.
 
+
 <h1> Getting to Know the Data </h1>
 
 1. Number of Rows and Columns: 185 rows and 5 columns.
