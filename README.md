@@ -41,6 +41,7 @@ The following charts were used here:
 6. Correlation Heatmap: To check the correlation among all the features.
 7. Pair Plot: To get an overall summary of the relationships between the variables.
 
+
 <h1> Feature Engineering & Data Pre-processing </h1>
 
 - Handling Outliers: Log transfomration was used for outlier treatment.
